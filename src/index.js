@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index1.js';
 
 
 const user = {
@@ -14,7 +15,9 @@ function formatName(user) {
 function TextButton(props) {
 	return (
 		<div>
-			<input type='text' defaultValue={props.default} />
+			<label>Email:
+			<input name='emailx' type='text' defaultValue={props.default} />
+			</label>
 			<button onClick={clickEvent}>{props.buttonText}</button>
 		</div>
 	);
@@ -29,7 +32,7 @@ class Clock extends React.Component {
 		super(props);
 		this.state = {date: new Date()};
 	}
-	render() {
+	render() { 
 		return (
 			<div>
 				<span>The time is {this.state.date.toLocaleTimeString()}.</span>
@@ -50,10 +53,10 @@ class Clock extends React.Component {
 function App() {
 	return (
 		<div>
-			<div style={{border:'1px solid silver'}}>
+			<div>
 				<h1>Hello, {formatName(user)}!</h1>
 			</div>
-			<TextButton default='default value' buttonText='Go' />
+			<TextButton default='gpdoud@gmail.com' buttonText='Go' />
 			<Clock />
 		</div>
 	)
